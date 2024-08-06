@@ -3,14 +3,19 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'aio',
     pathMatch: 'full'
   },
+  {
+    path: 'aio',
+    loadChildren: () => import('./pages/tabs-config/tabs-config.module').then( m => m.TabsConfigPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'aio'
+  },
+  
 ];
 
 @NgModule({

@@ -1,0 +1,23 @@
+<!-- src/app/business-section/components/business-detail/business-detail.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Business Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="business">
+    <ion-card-header>
+      <ion-card-title>{{ business.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Description:</strong> {{ business.description }}</p>
+      <!-- Puedes agregar más detalles aquí según tus necesidades -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón de Editar solo se muestra si business no es undefined -->
+  <ion-button *ngIf="business" [routerLink]="['/tabs/business/update', business.id]">Edit</ion-button>
+</ion-content>
+
