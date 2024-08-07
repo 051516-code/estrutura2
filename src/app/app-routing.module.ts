@@ -7,6 +7,7 @@ const routes: Routes = [
     redirectTo: 'aio',
     pathMatch: 'full'
   },
+  
   {
     path: 'aio',
     loadChildren: () => import('./pages/tabs-config/tabs-config.module').then( m => m.TabsConfigPageModule)
@@ -15,7 +16,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'aio'
   },
-  
+
 ];
 
 @NgModule({

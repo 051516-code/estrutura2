@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar Representación Visual</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Selecciona los Elementos Visuales para tu Empresa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Selección de Tarjeta de Presentación -->
+      <ion-item>
+        <ion-label>Tarjeta de Presentación</ion-label>
+        <ion-select [(ngModel)]="selectedCard">
+          <ion-select-option *ngFor="let card of cards" [value]="card">{{ card }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Selección de Pantalla de Inicio -->
+      <ion-item>
+        <ion-label>Pantalla de Inicio</ion-label>
+        <ion-select [(ngModel)]="selectedSplashScreen">
+          <ion-select-option *ngFor="let splash of splashScreens" [value]="splash">{{ splash }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Selección de Plantilla de Página de Aterrizaje -->
+      <ion-item>
+        <ion-label>Plantilla de Página de Aterrizaje</ion-label>
+        <ion-select [(ngModel)]="selectedLandingPage">
+          <ion-select-option *ngFor="let template of landingPages" [value]="template">{{ template }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Botón para Finalizar Creación -->
+      <ion-button expand="full" (click)="finalizeCreation()">Finalizar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

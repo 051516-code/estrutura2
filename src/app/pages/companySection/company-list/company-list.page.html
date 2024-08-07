@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Empresas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToCreateCompany()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let company of companies" (click)="viewCompanyDetails(company.id)">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ company.name }}</ion-card-title>
+          <ion-card-subtitle>{{ company.category }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Ver detalles</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="companies.length === 0">
+    <p>No hay empresas registradas.</p>
+  </div>
+</ion-content>
+

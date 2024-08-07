@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="company">Vista de Empresa: {{ company.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="company">
+    <h2>{{ company.name }}</h2>
+    <p>Categoría: {{ company.category }}</p>
+    <ion-img [src]="company.card"></ion-img>
+    <ion-img [src]="company.splashScreen"></ion-img>
+    <div [innerHTML]="company.landingPage"></div>
+    <ion-button color="primary" (click)="editCompany()">Editar</ion-button>
+    <ion-button color="danger" (click)="deleteCompany()">Eliminar</ion-button>
+  </div>
+  <div *ngIf="!company">
+    <p>Empresa no encontrada.</p>
+  </div>
+</ion-content>

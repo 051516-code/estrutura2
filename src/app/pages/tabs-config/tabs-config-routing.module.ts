@@ -9,12 +9,16 @@ const routes: Routes = [
     component: TabsConfigPage,
     children: [
       {
-        path: 'business',
-        loadChildren: () => import('../businessSection/business-section.module').then( m => m.BusinessSectionModule)
+        path: 'home',
+        loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
+      },
+      {
+        path : 'company',
+        loadChildren: () => import('../companySection/company.module').then( m => m.CompanyModule)
       },
       {
         path: '',
-        redirectTo: 'business',
+        redirectTo: 'company',
         pathMatch: 'full'
       }
     ]

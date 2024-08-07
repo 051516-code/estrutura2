@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Empresa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="company.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select [(ngModel)]="company.category" name="category">
+        <ion-select-option *ngFor="let category of categories" [value]="category">{{ category }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="full" (click)="saveChanges()">Guardar Cambios</ion-button>
+  </form>
+</ion-content>
